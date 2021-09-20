@@ -1,0 +1,174 @@
+@import "./globals.scss";
+
+.works {
+  background-color: rgb(203, 228, 235);
+  display: flex;
+
+  @include tablets {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 5;
+    overflow: hidden;
+
+    .info {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 10%;
+
+      p {
+        .gitLink {
+          color: blue;
+        }
+
+        @include phones {
+          font-size: 12.5px;
+          overflow: hidden;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 7;
+    position: relative;
+
+    .arrow {
+      position: absolute;
+      top: 45%;
+      cursor: pointer;
+      transition: all 0.4s ease-in;
+
+      &.leftArrow {
+        left: 5%;
+
+        @include tablets {
+          left: -2%;
+          top: 45%;
+        }
+
+        @include phones {
+          left: -8%;
+          top: 35%;
+        }
+      }
+
+      &.rightArrow {
+        right: 5%;
+
+        @include tablets {
+          right: -2%;
+          top: 45%;
+        }
+
+        @include phones {
+          right: -8%;
+          top: 35%;
+        }
+      }
+
+      .icon {
+        height: 100px;
+        width: 100px;
+        color: rgb(169, 169, 169);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .slider {
+      position: absolute;
+      top: 22%;
+      height: 450px;
+      display: flex;
+      transition: all 1s ease-out;
+
+      @include tablets {
+        align-items: center;
+        top: 2%;
+        height: 95%;
+        margin-left: 2px;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0 9.25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablets {
+          height: 65%;
+        }
+        .item {
+          width: 40vw;
+          height: 100%;
+          background: rgba(250, 250, 250, 0.5);
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include tablets {
+            width: 80vw;
+          }
+
+          .leftItem {
+            flex: 4;
+            height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .leftContainer {
+              width: 90%;
+              height: 95%;
+              padding: 0 17px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+
+              .imgContainer {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+
+            h2 {
+              font-size: 25px;
+            }
+            p {
+              font-size: 17px;
+            }
+            span {
+              font-size: 14px;
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+          .right {
+            flex: 8;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            @include phones {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

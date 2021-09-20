@@ -2,10 +2,20 @@
 
 $mainColor: #15023a;
 
-$width: 768px;
+@mixin lowresmonitors {
+  @media screen and (max-width: 1350px) {
+    @content;
+  }
+}
 
-@mixin mobile {
-  @media (max-width: #{$width}) {
+@mixin tablets {
+  @media screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: 720px) {
     @content;
   }
 }

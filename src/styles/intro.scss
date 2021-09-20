@@ -4,11 +4,6 @@
   background-color: white;
   display: flex;
 
-  @include mobile {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .left {
     flex: 0.5;
     overflow: hidden;
@@ -22,10 +17,18 @@
       justify-content: center;
       float: right;
     }
+
+    @include phones {
+      display: none;
+    }
   }
   .right {
     flex: 0.5;
     position: relative;
+
+    @include phones {
+      flex: 1;
+    }
 
     .wrapper {
       width: 100%;
@@ -35,7 +38,7 @@
       flex-direction: column;
       justify-content: center;
 
-      @include mobile {
+      @include phones {
         padding-left: 0;
         align-items: center;
       }
@@ -44,7 +47,7 @@
         font-size: 60px;
         margin: 10px 0;
 
-        @include mobile {
+        @include phones {
           font-size: 40px;
         }
       }
@@ -54,7 +57,7 @@
       h3 {
         font-size: 30px;
 
-        @include mobile {
+        @include phones {
           font-size: 20px;
         }
 
@@ -69,6 +72,10 @@
       bottom: 20px;
       left: 40%;
       animation: arrowBlink 2s infinite;
+
+      @include phones {
+        left: 44%;
+      }
     }
 
     @keyframes arrowBlink {
