@@ -70,10 +70,10 @@ export default function Works() {
           style={{ transform: `translateX(-${currentSlider * 33.33}%)` }}
         >
           {data.map((d) => (
-            <div className="container">
+            <div className="container" key={d.title}>
               <div className="item">
                 <div className="leftItem">
-                  <a href={d.link} target="_blank">
+                  <a href={d.link} target="_blank" rel="noreferrer">
                     <div className="leftContainer">
                       <h2>{d.title}</h2>
                       <p>{d.desc}</p>
